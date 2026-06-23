@@ -5,52 +5,166 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>学情诊断与家校反馈模板｜曹月华教学作品集</title>
   <style>
-    :root { --ink:#172033; --muted:#64748b; --navy:#1e3a5f; --line:rgba(23,32,51,.12); --bg:#f5f7fa; --soft:#eef5fb; }
-    * { box-sizing: border-box; }
-    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif; color:var(--ink); background:linear-gradient(180deg,#fbfcfe 0%,var(--bg) 100%); line-height:1.78; text-rendering:optimizeLegibility; -webkit-font-smoothing:antialiased; }
-    body::before { content:""; position:fixed; right:clamp(-72px,4vw,72px); top:96px; width:clamp(220px,24vw,340px); height:clamp(220px,24vw,340px); background:url("../assets/bnu-logo1.png") center / contain no-repeat; opacity:.055; pointer-events:none; z-index:0; }
-    .shell { position:relative; z-index:1; width:min(calc(100% - 32px), 920px); margin:32px auto 64px; }
-    .back { display:inline-flex; margin-bottom:18px; color:var(--navy); font-size:14px; text-decoration:none; border:1px solid var(--line); border-radius:999px; padding:8px 12px; background:#fff; box-shadow:0 8px 26px rgba(30,58,95,.06); }
-    article { background:rgba(255,255,255,.94); border:1px solid var(--line); border-radius:22px; padding:clamp(24px,5vw,48px); box-shadow:0 24px 80px rgba(30,58,95,.08); }
-    h1 { margin:0 0 24px; color:var(--navy); font-size:clamp(28px,5vw,44px); line-height:1.18; letter-spacing:-.04em; text-wrap:balance; }
-    h2 { margin:34px 0 12px; color:var(--navy); font-size:24px; border-top:1px solid var(--line); padding-top:22px; }
-    h3 { margin:26px 0 10px; color:var(--navy); font-size:19px; }
-    p, li { font-size:16px; color:#334155; }
-    ul, ol { padding-left:1.25em; }
+    :root {
+      --bg:#f5f7fa;
+      --paper:#ffffff;
+      --ink:#172033;
+      --muted:#64748b;
+      --line:rgba(23,32,51,.12);
+      --navy:#1e3a5f;
+      --navy-2:#315a85;
+      --soft:#eef5fb;
+      --shadow:0 24px 80px rgba(30,58,95,.09);
+      --radius-xl:22px;
+      --radius-lg:16px;
+      --ease-out:cubic-bezier(.16,1,.3,1);
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+      color:var(--ink);
+      background:
+        linear-gradient(rgba(30,58,95,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(30,58,95,.028) 1px, transparent 1px),
+        radial-gradient(circle at 12% 0%, rgba(49,90,133,.10), transparent 30rem),
+        linear-gradient(180deg,#fbfcfe 0%,var(--bg) 58%,#eef3f8 100%);
+      background-size:100% 100%,32px 32px,100% 100%,100% 100%;
+      line-height:1.78;
+      text-rendering:optimizeLegibility;
+      -webkit-font-smoothing:antialiased;
+    }
+    body::before {
+      content:"";
+      position:fixed;
+      inset:-18vh -18vw;
+      width:136vw;
+      height:136vh;
+      background-image:url("../assets/bnu-watermark-tile.png");
+      background-repeat:repeat;
+      background-size:720px 280px;
+      background-position:0 0;
+      opacity:.024;
+      transform:rotate(-18deg);
+      transform-origin:center;
+      pointer-events:none;
+      z-index:0;
+    }
+    a { color:inherit; text-decoration:none; }
+    .page-shell { position:relative; z-index:1; width:min(calc(100% - 32px), 1180px); margin:14px auto 72px; }
+    .topbar {
+      position:sticky;
+      top:14px;
+      z-index:20;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:28px;
+      padding:12px 16px;
+      border:1px solid rgba(23,32,51,.08);
+      border-radius:999px;
+      background:rgba(255,255,255,.84);
+      backdrop-filter:blur(18px);
+      box-shadow:0 16px 44px rgba(30,58,95,.08);
+    }
+    .brand-mini { display:flex; align-items:center; gap:10px; min-width:0; color:var(--navy); font-weight:760; }
+    .brand-dot { width:112px; height:34px; display:block; border-radius:11px; background:rgba(255,255,255,.92) url("../assets/bnu-wordmark.png") center / 102px auto no-repeat; border:1px solid rgba(30,58,95,.10); box-shadow:0 10px 24px rgba(30,58,95,.10); overflow:hidden; text-indent:-9999px; flex:0 0 auto; }
+    .back { display:inline-flex; align-items:center; gap:8px; color:var(--navy); font-size:14px; border:1px solid var(--line); border-radius:999px; padding:8px 12px; background:#fff; transition:220ms var(--ease-out); }
+    .back:hover { transform:translateY(-1px); box-shadow:0 10px 26px rgba(30,58,95,.10); }
+    .page-grid { display:flex; flex-direction:column; gap:18px; }
+    article, .side-card {
+      background:rgba(255,255,255,.92);
+      border:1px solid var(--line);
+      border-radius:var(--radius-xl);
+      box-shadow:var(--shadow);
+    }
+    article { min-width:0; padding:clamp(28px,5vw,54px); overflow:hidden; }
+    .side-stack { order:-1; display:grid; grid-template-columns:minmax(0, .88fr) minmax(280px, .72fr); gap:14px; }
+    .side-card { padding:20px; }
+    .eyebrow { display:inline-flex; margin-bottom:18px; padding:8px 12px; border-radius:999px; color:var(--navy); background:var(--soft); font-size:13px; font-weight:760; }
+    h1 { margin:0 0 26px; color:var(--navy); font-size:clamp(34px,5vw,54px); line-height:1.12; letter-spacing:-.055em; text-wrap:balance; }
+    h2 { margin:38px 0 14px; color:var(--navy); font-size:25px; line-height:1.28; border-top:1px solid var(--line); padding-top:24px; scroll-margin-top:110px; }
+    h3 { margin:28px 0 10px; color:var(--navy); font-size:19px; }
+    p, li { font-size:16px; color:#334155; text-wrap:pretty; }
+    p { margin:0 0 14px; }
+    ul, ol { padding-left:1.25em; margin:0 0 16px; }
     li + li { margin-top:8px; }
     strong { color:#111827; }
-    table { width:100%; border-collapse:collapse; margin:14px 0 22px; overflow:hidden; border:1px solid var(--line); border-radius:14px; background:#fff; }
-    th, td { border-bottom:1px solid var(--line); border-right:1px solid var(--line); padding:12px 14px; text-align:left; vertical-align:top; font-size:15px; color:#334155; }
+    .table-wrap { width:100%; overflow-x:auto; margin:16px 0 24px; border:1px solid var(--line); border-radius:16px; background:#fff; }
+    table { width:100%; min-width:620px; border-collapse:collapse; }
+    th, td { border-bottom:1px solid var(--line); border-right:1px solid var(--line); padding:13px 15px; text-align:left; vertical-align:top; font-size:15px; color:#334155; }
     th:last-child, td:last-child { border-right:0; }
     tr:last-child td { border-bottom:0; }
     th { background:var(--soft); color:var(--navy); font-weight:760; }
-    pre { white-space:pre-wrap; padding:16px; border:1px solid var(--line); border-radius:14px; background:#f8fafc; color:#26384d; font-size:14px; line-height:1.7; overflow:auto; }
+    pre { white-space:pre-wrap; padding:17px 18px; border:1px solid var(--line); border-radius:16px; background:#f8fafc; color:#26384d; font-size:14px; line-height:1.7; overflow:auto; }
     code { font-family:"SF Mono","JetBrains Mono",monospace; font-size:.92em; color:#1e3a5f; }
-    @media print { .back { display:none; } body { background:#fff; } body::before { display:none; } article { box-shadow:none; } }
+    .meta-label { margin:0 0 8px; color:var(--muted); font-size:12px; letter-spacing:.12em; text-transform:uppercase; font-weight:760; }
+    .meta-title { margin:0; color:var(--navy); font-size:18px; line-height:1.35; font-weight:800; }
+    .chip-list { display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
+    .chip { padding:7px 10px; border:1px solid rgba(49,90,133,.14); border-radius:999px; background:rgba(238,245,251,.86); color:var(--navy); font-size:12px; line-height:1; white-space:nowrap; }
+    .toc { display:grid; gap:4px; margin-top:12px; }
+    .toc a { display:block; padding:8px 10px; border-radius:10px; color:#41536a; font-size:13px; line-height:1.35; transition:180ms var(--ease-out); }
+    .toc a:hover { color:var(--navy); background:var(--soft); transform:translateX(2px); }
+    .reveal { opacity:1; transform:none; animation:softIn 620ms var(--ease-out) both; }
+    @keyframes softIn { from { opacity:.72; transform:translateY(8px); } to { opacity:1; transform:none; } }
+    @media (max-width: 860px) {
+      .side-stack { order:0; grid-template-columns:1fr; }
+      .toc { grid-template-columns:1fr; }
+      .topbar { align-items:flex-start; flex-direction:column; border-radius:22px; }
+    }
+    @media (max-width: 640px) {
+      .page-shell { width:min(calc(100% - 20px), 1180px); margin-top:10px; }
+      article { padding:24px 18px; border-radius:18px; }
+      h1 { font-size:34px; }
+      h2 { font-size:22px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior:auto; }
+      .reveal { animation:none; }
+      .back, .toc a { transition:none; }
+    }
+    @media print {
+      body { background:#fff; }
+      body::before, .topbar, .side-stack { display:none; }
+      .page-shell { width:100%; margin:0; }
+      .page-grid { display:block; }
+      article { box-shadow:none; border-color:#ddd; }
+      .reveal { animation:none; }
+    }
   </style>
 </head>
 <body>
-  <main class="shell">
-    <a class="back" href="../index.html">返回作品集首页</a>
-    <article>
-      <h1>学情诊断与家校反馈模板</h1>
-<h2>一、使用场景</h2>
-<p>本材料用于记录教师如何根据课堂表现、作业情况、错题类型和阶段测评结果，对学生进行学习诊断，并向家长提供具体、客观、可执行的反馈。</p>
-<p>适用于：</p>
-<ul>
+  <main class="page-shell" id="top">
+    <header class="topbar">
+      <a class="brand-mini" href="../index.html#top" aria-label="返回作品集首页">
+        <span class="brand-dot">曹</span>
+        <span>曹月华｜英语教师教学作品集</span>
+      </a>
+      <a class="back" href="../index.html#artifacts">返回作品集首页</a>
+    </header>
+    <div class="page-grid">
+      <article>
+        <span class="eyebrow">Student Support · 学情诊断反馈</span>
+        <h1>学情诊断与家校反馈模板</h1>
+<h2 id="一-使用场景" class="reveal">一、使用场景</h2>
+<p class="reveal">本材料用于记录教师如何根据课堂表现、作业情况、错题类型和阶段测评结果，对学生进行学习诊断，并向家长提供具体、客观、可执行的反馈。</p>
+<p class="reveal">适用于：</p>
+<ul class="reveal">
 <li>初中英语阶段反馈；</li>
 <li>小学英语学习习惯反馈；</li>
 <li>课后服务和个性化辅导；</li>
 <li>家校沟通记录。</li>
 </ul>
-<h2>二、学生阶段反馈样例（匿名）</h2>
-<h3>学生基本情况</h3>
-<p>学生：A同学</p>
-<p>年级：初二</p>
-<p>阶段：阅读理解专项训练后</p>
-<p>主要表现：词汇基础尚可，但阅读细节题失分较多，写作句式较单一。</p>
-<h2>三、学情诊断</h2>
-<table><thead><tr>
+<h2 id="二-学生阶段反馈样例-匿名" class="reveal">二、学生阶段反馈样例（匿名）</h2>
+<h3 id="学生基本情况" class="reveal">学生基本情况</h3>
+<p class="reveal">学生：A同学</p>
+<p class="reveal">年级：初二</p>
+<p class="reveal">阶段：阅读理解专项训练后</p>
+<p class="reveal">主要表现：词汇基础尚可，但阅读细节题失分较多，写作句式较单一。</p>
+<h2 id="三-学情诊断" class="reveal">三、学情诊断</h2>
+<div class="table-wrap"><table><thead><tr>
 <th>观察维度</th>
 <th>表现</th>
 <th>初步判断</th>
@@ -80,28 +194,55 @@
 <td>愿意订正，但错因记录不完整</td>
 <td>需要建立错题复盘流程</td>
 </tr>
-</tbody></table>
-<h2>四、阶段提升建议</h2>
-<ol>
+</tbody></table></div>
+<h2 id="四-阶段提升建议" class="reveal">四、阶段提升建议</h2>
+<ol class="reveal">
 <li>阅读训练中先圈出题干关键词，再回原文定位。</li>
 <li>每周完成 2 篇阅读错题复盘，记录错因类型。</li>
 <li>建立“连接词+常用句型”积累表。</li>
 <li>每次课后完成 3 个口头造句或书面仿写任务。</li>
 <li>下阶段重点关注阅读细节题和写作句式丰富度。</li>
 </ol>
-<h2>五、家校沟通话术样例</h2>
-<p>家长您好，A同学这阶段学习态度比较稳定，课堂能跟上主要内容。现在主要问题不是完全不会，而是阅读题中关键词定位和长句分析还不够稳定，所以有时会在细节题上丢分。接下来我会在课堂中增加“圈关键词、找定位句、比对选项”的训练，也建议孩子课后把错题原因写清楚。我们先以两周为一个小目标，重点提升阅读细节题的稳定性。</p>
-<h2>六、教师反思</h2>
-<p>家校反馈要避免空泛评价，例如“孩子不认真”“基础差”。更有效的反馈应包括：</p>
-<ul>
+<h2 id="五-家校沟通话术样例" class="reveal">五、家校沟通话术样例</h2>
+<p class="reveal">家长您好，A同学这阶段学习态度比较稳定，课堂能跟上主要内容。现在主要问题不是完全不会，而是阅读题中关键词定位和长句分析还不够稳定，所以有时会在细节题上丢分。接下来我会在课堂中增加“圈关键词、找定位句、比对选项”的训练，也建议孩子课后把错题原因写清楚。我们先以两周为一个小目标，重点提升阅读细节题的稳定性。</p>
+<h2 id="六-教师反思" class="reveal">六、教师反思</h2>
+<p class="reveal">家校反馈要避免空泛评价，例如“孩子不认真”“基础差”。更有效的反馈应包括：</p>
+<ul class="reveal">
 <li>具体表现；</li>
 <li>可能原因；</li>
 <li>下一步动作；</li>
 <li>家庭可配合事项；</li>
 <li>下次反馈时间。</li>
 </ul>
-<p>这样的沟通更容易获得家长信任，也能帮助学生形成可执行的改进路径。</p>
-    </article>
+<p class="reveal">这样的沟通更容易获得家长信任，也能帮助学生形成可执行的改进路径。</p>
+      </article>
+      <aside class="side-stack" aria-label="材料信息">
+        <section class="side-card reveal visible">
+          <p class="meta-label">Material</p>
+          <p class="meta-title">学情诊断与家校反馈模板</p>
+          <div class="chip-list"><span class="chip">阶段测评</span><span class="chip">家校沟通</span><span class="chip">学习建议</span></div>
+        </section>
+        <section class="side-card reveal visible">
+          <p class="meta-label">Contents</p>
+          <nav class="toc" aria-label="章节导航">
+            <a href="#一-使用场景">一、使用场景</a>
+<a href="#二-学生阶段反馈样例-匿名">二、学生阶段反馈样例（匿名）</a>
+<a href="#三-学情诊断">三、学情诊断</a>
+<a href="#四-阶段提升建议">四、阶段提升建议</a>
+<a href="#五-家校沟通话术样例">五、家校沟通话术样例</a>
+<a href="#六-教师反思">六、教师反思</a>
+          </nav>
+        </section>
+      </aside>
+    </div>
   </main>
+  <script>
+    document.querySelectorAll('.toc a').forEach((link) => {
+      link.addEventListener('click', () => {
+        document.querySelectorAll('.toc a').forEach((item) => item.removeAttribute('aria-current'));
+        link.setAttribute('aria-current', 'true');
+      });
+    });
+  </script>
 </body>
 </html>

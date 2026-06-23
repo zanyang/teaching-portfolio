@@ -3,39 +3,153 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>U2_Different_Families_教学设计｜曹月华教学作品集</title>
+  <title>U2 Different Families 教学设计｜曹月华教学作品集</title>
   <style>
-    :root { --ink:#172033; --muted:#64748b; --navy:#1e3a5f; --line:rgba(23,32,51,.12); --bg:#f5f7fa; --soft:#eef5fb; }
-    * { box-sizing: border-box; }
-    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif; color:var(--ink); background:linear-gradient(180deg,#fbfcfe 0%,var(--bg) 100%); line-height:1.78; text-rendering:optimizeLegibility; -webkit-font-smoothing:antialiased; }
-    body::before { content:""; position:fixed; right:clamp(-72px,4vw,72px); top:96px; width:clamp(220px,24vw,340px); height:clamp(220px,24vw,340px); background:url("../assets/bnu-logo1.png") center / contain no-repeat; opacity:.055; pointer-events:none; z-index:0; }
-    .shell { position:relative; z-index:1; width:min(calc(100% - 32px), 920px); margin:32px auto 64px; }
-    .back { display:inline-flex; margin-bottom:18px; color:var(--navy); font-size:14px; text-decoration:none; border:1px solid var(--line); border-radius:999px; padding:8px 12px; background:#fff; box-shadow:0 8px 26px rgba(30,58,95,.06); }
-    article { background:rgba(255,255,255,.94); border:1px solid var(--line); border-radius:22px; padding:clamp(24px,5vw,48px); box-shadow:0 24px 80px rgba(30,58,95,.08); }
-    h1 { margin:0 0 24px; color:var(--navy); font-size:clamp(28px,5vw,44px); line-height:1.18; letter-spacing:-.04em; text-wrap:balance; }
-    h2 { margin:34px 0 12px; color:var(--navy); font-size:24px; border-top:1px solid var(--line); padding-top:22px; }
-    h3 { margin:26px 0 10px; color:var(--navy); font-size:19px; }
-    p, li { font-size:16px; color:#334155; }
-    ul, ol { padding-left:1.25em; }
+    :root {
+      --bg:#f5f7fa;
+      --paper:#ffffff;
+      --ink:#172033;
+      --muted:#64748b;
+      --line:rgba(23,32,51,.12);
+      --navy:#1e3a5f;
+      --navy-2:#315a85;
+      --soft:#eef5fb;
+      --shadow:0 24px 80px rgba(30,58,95,.09);
+      --radius-xl:22px;
+      --radius-lg:16px;
+      --ease-out:cubic-bezier(.16,1,.3,1);
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+      color:var(--ink);
+      background:
+        linear-gradient(rgba(30,58,95,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(30,58,95,.028) 1px, transparent 1px),
+        radial-gradient(circle at 12% 0%, rgba(49,90,133,.10), transparent 30rem),
+        linear-gradient(180deg,#fbfcfe 0%,var(--bg) 58%,#eef3f8 100%);
+      background-size:100% 100%,32px 32px,100% 100%,100% 100%;
+      line-height:1.78;
+      text-rendering:optimizeLegibility;
+      -webkit-font-smoothing:antialiased;
+    }
+    body::before {
+      content:"";
+      position:fixed;
+      inset:-18vh -18vw;
+      width:136vw;
+      height:136vh;
+      background-image:url("../assets/bnu-watermark-tile.png");
+      background-repeat:repeat;
+      background-size:720px 280px;
+      background-position:0 0;
+      opacity:.024;
+      transform:rotate(-18deg);
+      transform-origin:center;
+      pointer-events:none;
+      z-index:0;
+    }
+    a { color:inherit; text-decoration:none; }
+    .page-shell { position:relative; z-index:1; width:min(calc(100% - 32px), 1180px); margin:14px auto 72px; }
+    .topbar {
+      position:sticky;
+      top:14px;
+      z-index:20;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:28px;
+      padding:12px 16px;
+      border:1px solid rgba(23,32,51,.08);
+      border-radius:999px;
+      background:rgba(255,255,255,.84);
+      backdrop-filter:blur(18px);
+      box-shadow:0 16px 44px rgba(30,58,95,.08);
+    }
+    .brand-mini { display:flex; align-items:center; gap:10px; min-width:0; color:var(--navy); font-weight:760; }
+    .brand-dot { width:112px; height:34px; display:block; border-radius:11px; background:rgba(255,255,255,.92) url("../assets/bnu-wordmark.png") center / 102px auto no-repeat; border:1px solid rgba(30,58,95,.10); box-shadow:0 10px 24px rgba(30,58,95,.10); overflow:hidden; text-indent:-9999px; flex:0 0 auto; }
+    .back { display:inline-flex; align-items:center; gap:8px; color:var(--navy); font-size:14px; border:1px solid var(--line); border-radius:999px; padding:8px 12px; background:#fff; transition:220ms var(--ease-out); }
+    .back:hover { transform:translateY(-1px); box-shadow:0 10px 26px rgba(30,58,95,.10); }
+    .page-grid { display:flex; flex-direction:column; gap:18px; }
+    article, .side-card {
+      background:rgba(255,255,255,.92);
+      border:1px solid var(--line);
+      border-radius:var(--radius-xl);
+      box-shadow:var(--shadow);
+    }
+    article { min-width:0; padding:clamp(28px,5vw,54px); overflow:hidden; }
+    .side-stack { order:-1; display:grid; grid-template-columns:minmax(0, .88fr) minmax(280px, .72fr); gap:14px; }
+    .side-card { padding:20px; }
+    .eyebrow { display:inline-flex; margin-bottom:18px; padding:8px 12px; border-radius:999px; color:var(--navy); background:var(--soft); font-size:13px; font-weight:760; }
+    h1 { margin:0 0 26px; color:var(--navy); font-size:clamp(34px,5vw,54px); line-height:1.12; letter-spacing:-.055em; text-wrap:balance; }
+    h2 { margin:38px 0 14px; color:var(--navy); font-size:25px; line-height:1.28; border-top:1px solid var(--line); padding-top:24px; scroll-margin-top:110px; }
+    h3 { margin:28px 0 10px; color:var(--navy); font-size:19px; }
+    p, li { font-size:16px; color:#334155; text-wrap:pretty; }
+    p { margin:0 0 14px; }
+    ul, ol { padding-left:1.25em; margin:0 0 16px; }
     li + li { margin-top:8px; }
     strong { color:#111827; }
-    table { width:100%; border-collapse:collapse; margin:14px 0 22px; overflow:hidden; border:1px solid var(--line); border-radius:14px; background:#fff; }
-    th, td { border-bottom:1px solid var(--line); border-right:1px solid var(--line); padding:12px 14px; text-align:left; vertical-align:top; font-size:15px; color:#334155; }
+    .table-wrap { width:100%; overflow-x:auto; margin:16px 0 24px; border:1px solid var(--line); border-radius:16px; background:#fff; }
+    table { width:100%; min-width:620px; border-collapse:collapse; }
+    th, td { border-bottom:1px solid var(--line); border-right:1px solid var(--line); padding:13px 15px; text-align:left; vertical-align:top; font-size:15px; color:#334155; }
     th:last-child, td:last-child { border-right:0; }
     tr:last-child td { border-bottom:0; }
     th { background:var(--soft); color:var(--navy); font-weight:760; }
-    pre { white-space:pre-wrap; padding:16px; border:1px solid var(--line); border-radius:14px; background:#f8fafc; color:#26384d; font-size:14px; line-height:1.7; overflow:auto; }
+    pre { white-space:pre-wrap; padding:17px 18px; border:1px solid var(--line); border-radius:16px; background:#f8fafc; color:#26384d; font-size:14px; line-height:1.7; overflow:auto; }
     code { font-family:"SF Mono","JetBrains Mono",monospace; font-size:.92em; color:#1e3a5f; }
-    @media print { .back { display:none; } body { background:#fff; } body::before { display:none; } article { box-shadow:none; } }
+    .meta-label { margin:0 0 8px; color:var(--muted); font-size:12px; letter-spacing:.12em; text-transform:uppercase; font-weight:760; }
+    .meta-title { margin:0; color:var(--navy); font-size:18px; line-height:1.35; font-weight:800; }
+    .chip-list { display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
+    .chip { padding:7px 10px; border:1px solid rgba(49,90,133,.14); border-radius:999px; background:rgba(238,245,251,.86); color:var(--navy); font-size:12px; line-height:1; white-space:nowrap; }
+    .toc { display:grid; gap:4px; margin-top:12px; }
+    .toc a { display:block; padding:8px 10px; border-radius:10px; color:#41536a; font-size:13px; line-height:1.35; transition:180ms var(--ease-out); }
+    .toc a:hover { color:var(--navy); background:var(--soft); transform:translateX(2px); }
+    .reveal { opacity:1; transform:none; animation:softIn 620ms var(--ease-out) both; }
+    @keyframes softIn { from { opacity:.72; transform:translateY(8px); } to { opacity:1; transform:none; } }
+    @media (max-width: 860px) {
+      .side-stack { order:0; grid-template-columns:1fr; }
+      .toc { grid-template-columns:1fr; }
+      .topbar { align-items:flex-start; flex-direction:column; border-radius:22px; }
+    }
+    @media (max-width: 640px) {
+      .page-shell { width:min(calc(100% - 20px), 1180px); margin-top:10px; }
+      article { padding:24px 18px; border-radius:18px; }
+      h1 { font-size:34px; }
+      h2 { font-size:22px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior:auto; }
+      .reveal { animation:none; }
+      .back, .toc a { transition:none; }
+    }
+    @media print {
+      body { background:#fff; }
+      body::before, .topbar, .side-stack { display:none; }
+      .page-shell { width:100%; margin:0; }
+      .page-grid { display:block; }
+      article { box-shadow:none; border-color:#ddd; }
+      .reveal { animation:none; }
+    }
   </style>
 </head>
 <body>
-  <main class="shell">
-    <a class="back" href="../index.html">返回作品集首页</a>
-    <article>
-      <h1>U2 Different Families 教学设计</h1>
-<h2>一、基本信息</h2>
-<table><thead><tr>
+  <main class="page-shell" id="top">
+    <header class="topbar">
+      <a class="brand-mini" href="../index.html#top" aria-label="返回作品集首页">
+        <span class="brand-dot">曹</span>
+        <span>曹月华｜英语教师教学作品集</span>
+      </a>
+      <a class="back" href="../index.html#artifacts">返回作品集首页</a>
+    </header>
+    <div class="page-grid">
+      <article>
+        <span class="eyebrow">Lesson Case · 小学英语课例</span>
+        <h1>U2 Different Families 教学设计</h1>
+<h2 id="一-基本信息" class="reveal">一、基本信息</h2>
+<div class="table-wrap"><table><thead><tr>
 <th>项目</th>
 <th>内容</th>
 </tr></thead><tbody>
@@ -63,114 +177,144 @@
 <td>设计者</td>
 <td>曹月华</td>
 </tr>
-</tbody></table>
-<h2>二、教材与学情分析</h2>
-<p>本单元以“不同的家庭”为主题，贴近三年级学生生活经验，适合通过图片、家庭成员卡片、同伴问答和简单展示活动引导学生进行真实表达。三年级学生处于英语学习起步阶段，模仿能力强、参与意愿高，但注意力持续时间较短，语言输出需要充分支架。</p>
-<p>本课设计围绕家庭成员词汇和介绍家庭成员的基础句型展开，重点帮助学生从“能听懂、会跟读”走向“能在情境中介绍家庭成员”。</p>
-<h2>三、教学目标</h2>
-<h3>语言能力</h3>
-<ul>
+</tbody></table></div>
+<h2 id="二-教材与学情分析" class="reveal">二、教材与学情分析</h2>
+<p class="reveal">本单元以“不同的家庭”为主题，贴近三年级学生生活经验，适合通过图片、家庭成员卡片、同伴问答和简单展示活动引导学生进行真实表达。三年级学生处于英语学习起步阶段，模仿能力强、参与意愿高，但注意力持续时间较短，语言输出需要充分支架。</p>
+<p class="reveal">本课设计围绕家庭成员词汇和介绍家庭成员的基础句型展开，重点帮助学生从“能听懂、会跟读”走向“能在情境中介绍家庭成员”。</p>
+<h2 id="三-教学目标" class="reveal">三、教学目标</h2>
+<h3 id="语言能力" class="reveal">语言能力</h3>
+<ul class="reveal">
 <li>能听、说、认读家庭成员相关词汇；</li>
 <li>能使用目标句型介绍家庭成员；</li>
 <li>能完成简单的 <code>My Family Card</code> 口头介绍。</li>
 </ul>
-<h3>思维品质</h3>
-<ul>
+<h3 id="思维品质" class="reveal">思维品质</h3>
+<ul class="reveal">
 <li>能通过图片观察人物关系；</li>
 <li>能在教师问题链引导下比较不同家庭成员的特点；</li>
 <li>能用简单语言表达自己的家庭信息。</li>
 </ul>
-<h3>学习能力</h3>
-<ul>
+<h3 id="学习能力" class="reveal">学习能力</h3>
+<ul class="reveal">
 <li>能借助图片、句型支架和同伴练习完成表达任务；</li>
 <li>能在小组活动中倾听同伴并给予简单回应。</li>
 </ul>
-<h3>文化意识</h3>
-<ul>
+<h3 id="文化意识" class="reveal">文化意识</h3>
+<ul class="reveal">
 <li>初步认识不同家庭结构，尊重不同家庭成员关系；</li>
 <li>感受家庭中的爱与责任。</li>
 </ul>
-<h2>四、教学重难点</h2>
-<h3>教学重点</h3>
-<ul>
+<h2 id="四-教学重难点" class="reveal">四、教学重难点</h2>
+<h3 id="教学重点" class="reveal">教学重点</h3>
+<ul class="reveal">
 <li>家庭成员词汇的理解与表达；</li>
 <li>使用目标句型介绍家庭成员。</li>
 </ul>
-<h3>教学难点</h3>
-<ul>
+<h3 id="教学难点" class="reveal">教学难点</h3>
+<ul class="reveal">
 <li>学生能在脱离机械跟读后进行较自然的家庭成员介绍；</li>
 <li>基础不同的学生都能参与课堂输出。</li>
 </ul>
-<h2>五、教学方法</h2>
-<ul>
+<h2 id="五-教学方法" class="reveal">五、教学方法</h2>
+<ul class="reveal">
 <li>情境教学法；</li>
 <li>任务型教学法；</li>
 <li>分层提问；</li>
 <li>同伴合作学习；</li>
 <li>形成性评价。</li>
 </ul>
-<h2>六、教学过程</h2>
-<h3>Step 1 Warm-up and Lead-in</h3>
-<p>教师展示一张家庭照片或卡通家庭图片，提问：</p>
-<ul>
+<h2 id="六-教学过程" class="reveal">六、教学过程</h2>
+<h3 id="Step-1-Warm-up-and-Lead-in" class="reveal">Step 1 Warm-up and Lead-in</h3>
+<p class="reveal">教师展示一张家庭照片或卡通家庭图片，提问：</p>
+<ul class="reveal">
 <li>Who can you see?</li>
 <li>Is it a big family or a small family?</li>
 <li>Who is in your family?</li>
 </ul>
-<p>设计意图：激活学生已有生活经验，降低表达焦虑。</p>
-<h3>Step 2 Presentation</h3>
-<p>教师通过图片呈现核心词汇和句型，引导学生跟读、模仿和识别。</p>
-<p>目标句型示例：</p>
-<pre><code>This is my ______.
+<p class="reveal">设计意图：激活学生已有生活经验，降低表达焦虑。</p>
+<h3 id="Step-2-Presentation" class="reveal">Step 2 Presentation</h3>
+<p class="reveal">教师通过图片呈现核心词汇和句型，引导学生跟读、模仿和识别。</p>
+<p class="reveal">目标句型示例：</p>
+<pre class="reveal"><code>This is my ______.
 He/She is ______.
 I love my family.</code></pre>
-<p>设计意图：通过图片和句型支架帮助学生建立词义和表达之间的连接。</p>
-<h3>Step 3 Practice</h3>
-<p>活动一：Look and Say</p>
-<p>学生根据图片说出家庭成员词汇。</p>
-<p>活动二：Pair Work</p>
-<p>两人一组，使用句型互相介绍图片中的家庭成员。</p>
-<p>活动三：Quick Response</p>
-<p>教师快速出示图片，学生抢答或小组轮答。</p>
-<p>设计意图：通过重复但变化的操练巩固语言。</p>
-<h3>Step 4 Production</h3>
-<p>学生完成 <code>My Family Card</code>，选择一位家庭成员进行介绍。</p>
-<p>输出示例：</p>
-<pre><code>This is my mother.
+<p class="reveal">设计意图：通过图片和句型支架帮助学生建立词义和表达之间的连接。</p>
+<h3 id="Step-3-Practice" class="reveal">Step 3 Practice</h3>
+<p class="reveal">活动一：Look and Say</p>
+<p class="reveal">学生根据图片说出家庭成员词汇。</p>
+<p class="reveal">活动二：Pair Work</p>
+<p class="reveal">两人一组，使用句型互相介绍图片中的家庭成员。</p>
+<p class="reveal">活动三：Quick Response</p>
+<p class="reveal">教师快速出示图片，学生抢答或小组轮答。</p>
+<p class="reveal">设计意图：通过重复但变化的操练巩固语言。</p>
+<h3 id="Step-4-Production" class="reveal">Step 4 Production</h3>
+<p class="reveal">学生完成 <code>My Family Card</code>，选择一位家庭成员进行介绍。</p>
+<p class="reveal">输出示例：</p>
+<pre class="reveal"><code>This is my mother.
 She is nice.
 I love my family.</code></pre>
-<p>分层要求：</p>
-<ul>
+<p class="reveal">分层要求：</p>
+<ul class="reveal">
 <li>基础层：能说出家庭成员；</li>
 <li>提升层：能说完整句；</li>
 <li>拓展层：能补充一个特征或感受。</li>
 </ul>
-<h3>Step 5 Feedback and Summary</h3>
-<p>教师从三个方面给予反馈：</p>
-<ul>
+<h3 id="Step-5-Feedback-and-Summary" class="reveal">Step 5 Feedback and Summary</h3>
+<p class="reveal">教师从三个方面给予反馈：</p>
+<ul class="reveal">
 <li>是否能准确使用词汇；</li>
 <li>是否愿意开口表达；</li>
 <li>是否能回应同伴。</li>
 </ul>
-<p>课堂总结：</p>
-<pre><code>Families are different, but love is the same.</code></pre>
-<h2>七、板书设计</h2>
-<pre><code>U2 Different Families
+<p class="reveal">课堂总结：</p>
+<pre class="reveal"><code>Families are different, but love is the same.</code></pre>
+<h2 id="七-板书设计" class="reveal">七、板书设计</h2>
+<pre class="reveal"><code>U2 Different Families
 
 This is my ______.
 He/She is ______.
 I love my family.
 
 family / father / mother / brother / sister / ...</code></pre>
-<h2>八、作业设计</h2>
-<ol>
+<h2 id="八-作业设计" class="reveal">八、作业设计</h2>
+<ol class="reveal">
 <li>完成 <code>My Family Card</code>；</li>
 <li>回家向家人用英语介绍一位家庭成员；</li>
 <li>选做：画一张家庭成员图，并写 2-3 句英文介绍。</li>
 </ol>
-<h2>九、教学反思</h2>
-<p>本课的关键不是让学生机械记住家庭成员词汇，而是让学生在熟悉的生活情境中建立表达意愿。三年级学生语言储备有限，因此教师需要提供足够的图片、句型和同伴练习支架。后续教学中可继续增加开放性问题，如“Why do you love your family?”，逐步推动学生从词句表达走向情感表达。</p>
-    </article>
+<h2 id="九-教学反思" class="reveal">九、教学反思</h2>
+<p class="reveal">本课的关键不是让学生机械记住家庭成员词汇，而是让学生在熟悉的生活情境中建立表达意愿。三年级学生语言储备有限，因此教师需要提供足够的图片、句型和同伴练习支架。后续教学中可继续增加开放性问题，如“Why do you love your family?”，逐步推动学生从词句表达走向情感表达。</p>
+      </article>
+      <aside class="side-stack" aria-label="材料信息">
+        <section class="side-card reveal visible">
+          <p class="meta-label">Material</p>
+          <p class="meta-title">U2 Different Families 教学设计</p>
+          <div class="chip-list"><span class="chip">教学设计</span><span class="chip">活动链</span><span class="chip">分层支架</span></div>
+        </section>
+        <section class="side-card reveal visible">
+          <p class="meta-label">Contents</p>
+          <nav class="toc" aria-label="章节导航">
+            <a href="#一-基本信息">一、基本信息</a>
+<a href="#二-教材与学情分析">二、教材与学情分析</a>
+<a href="#三-教学目标">三、教学目标</a>
+<a href="#四-教学重难点">四、教学重难点</a>
+<a href="#五-教学方法">五、教学方法</a>
+<a href="#六-教学过程">六、教学过程</a>
+<a href="#七-板书设计">七、板书设计</a>
+<a href="#八-作业设计">八、作业设计</a>
+<a href="#九-教学反思">九、教学反思</a>
+          </nav>
+        </section>
+      </aside>
+    </div>
   </main>
+  <script>
+    document.querySelectorAll('.toc a').forEach((link) => {
+      link.addEventListener('click', () => {
+        document.querySelectorAll('.toc a').forEach((item) => item.removeAttribute('aria-current'));
+        link.setAttribute('aria-current', 'true');
+      });
+    });
+  </script>
 </body>
 </html>

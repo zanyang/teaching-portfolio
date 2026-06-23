@@ -5,82 +5,196 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>三级责任班级管理案例｜曹月华教学作品集</title>
   <style>
-    :root { --ink:#172033; --muted:#64748b; --navy:#1e3a5f; --line:rgba(23,32,51,.12); --bg:#f5f7fa; --soft:#eef5fb; }
-    * { box-sizing: border-box; }
-    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif; color:var(--ink); background:linear-gradient(180deg,#fbfcfe 0%,var(--bg) 100%); line-height:1.78; text-rendering:optimizeLegibility; -webkit-font-smoothing:antialiased; }
-    body::before { content:""; position:fixed; right:clamp(-72px,4vw,72px); top:96px; width:clamp(220px,24vw,340px); height:clamp(220px,24vw,340px); background:url("../assets/bnu-logo1.png") center / contain no-repeat; opacity:.055; pointer-events:none; z-index:0; }
-    .shell { position:relative; z-index:1; width:min(calc(100% - 32px), 920px); margin:32px auto 64px; }
-    .back { display:inline-flex; margin-bottom:18px; color:var(--navy); font-size:14px; text-decoration:none; border:1px solid var(--line); border-radius:999px; padding:8px 12px; background:#fff; box-shadow:0 8px 26px rgba(30,58,95,.06); }
-    article { background:rgba(255,255,255,.94); border:1px solid var(--line); border-radius:22px; padding:clamp(24px,5vw,48px); box-shadow:0 24px 80px rgba(30,58,95,.08); }
-    h1 { margin:0 0 24px; color:var(--navy); font-size:clamp(28px,5vw,44px); line-height:1.18; letter-spacing:-.04em; text-wrap:balance; }
-    h2 { margin:34px 0 12px; color:var(--navy); font-size:24px; border-top:1px solid var(--line); padding-top:22px; }
-    h3 { margin:26px 0 10px; color:var(--navy); font-size:19px; }
-    p, li { font-size:16px; color:#334155; }
-    ul, ol { padding-left:1.25em; }
+    :root {
+      --bg:#f5f7fa;
+      --paper:#ffffff;
+      --ink:#172033;
+      --muted:#64748b;
+      --line:rgba(23,32,51,.12);
+      --navy:#1e3a5f;
+      --navy-2:#315a85;
+      --soft:#eef5fb;
+      --shadow:0 24px 80px rgba(30,58,95,.09);
+      --radius-xl:22px;
+      --radius-lg:16px;
+      --ease-out:cubic-bezier(.16,1,.3,1);
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif;
+      color:var(--ink);
+      background:
+        linear-gradient(rgba(30,58,95,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(30,58,95,.028) 1px, transparent 1px),
+        radial-gradient(circle at 12% 0%, rgba(49,90,133,.10), transparent 30rem),
+        linear-gradient(180deg,#fbfcfe 0%,var(--bg) 58%,#eef3f8 100%);
+      background-size:100% 100%,32px 32px,100% 100%,100% 100%;
+      line-height:1.78;
+      text-rendering:optimizeLegibility;
+      -webkit-font-smoothing:antialiased;
+    }
+    body::before {
+      content:"";
+      position:fixed;
+      inset:-18vh -18vw;
+      width:136vw;
+      height:136vh;
+      background-image:url("../assets/bnu-watermark-tile.png");
+      background-repeat:repeat;
+      background-size:720px 280px;
+      background-position:0 0;
+      opacity:.024;
+      transform:rotate(-18deg);
+      transform-origin:center;
+      pointer-events:none;
+      z-index:0;
+    }
+    a { color:inherit; text-decoration:none; }
+    .page-shell { position:relative; z-index:1; width:min(calc(100% - 32px), 1180px); margin:14px auto 72px; }
+    .topbar {
+      position:sticky;
+      top:14px;
+      z-index:20;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:28px;
+      padding:12px 16px;
+      border:1px solid rgba(23,32,51,.08);
+      border-radius:999px;
+      background:rgba(255,255,255,.84);
+      backdrop-filter:blur(18px);
+      box-shadow:0 16px 44px rgba(30,58,95,.08);
+    }
+    .brand-mini { display:flex; align-items:center; gap:10px; min-width:0; color:var(--navy); font-weight:760; }
+    .brand-dot { width:112px; height:34px; display:block; border-radius:11px; background:rgba(255,255,255,.92) url("../assets/bnu-wordmark.png") center / 102px auto no-repeat; border:1px solid rgba(30,58,95,.10); box-shadow:0 10px 24px rgba(30,58,95,.10); overflow:hidden; text-indent:-9999px; flex:0 0 auto; }
+    .back { display:inline-flex; align-items:center; gap:8px; color:var(--navy); font-size:14px; border:1px solid var(--line); border-radius:999px; padding:8px 12px; background:#fff; transition:220ms var(--ease-out); }
+    .back:hover { transform:translateY(-1px); box-shadow:0 10px 26px rgba(30,58,95,.10); }
+    .page-grid { display:flex; flex-direction:column; gap:18px; }
+    article, .side-card {
+      background:rgba(255,255,255,.92);
+      border:1px solid var(--line);
+      border-radius:var(--radius-xl);
+      box-shadow:var(--shadow);
+    }
+    article { min-width:0; padding:clamp(28px,5vw,54px); overflow:hidden; }
+    .side-stack { order:-1; display:grid; grid-template-columns:minmax(0, .88fr) minmax(280px, .72fr); gap:14px; }
+    .side-card { padding:20px; }
+    .eyebrow { display:inline-flex; margin-bottom:18px; padding:8px 12px; border-radius:999px; color:var(--navy); background:var(--soft); font-size:13px; font-weight:760; }
+    h1 { margin:0 0 26px; color:var(--navy); font-size:clamp(34px,5vw,54px); line-height:1.12; letter-spacing:-.055em; text-wrap:balance; }
+    h2 { margin:38px 0 14px; color:var(--navy); font-size:25px; line-height:1.28; border-top:1px solid var(--line); padding-top:24px; scroll-margin-top:110px; }
+    h3 { margin:28px 0 10px; color:var(--navy); font-size:19px; }
+    p, li { font-size:16px; color:#334155; text-wrap:pretty; }
+    p { margin:0 0 14px; }
+    ul, ol { padding-left:1.25em; margin:0 0 16px; }
     li + li { margin-top:8px; }
     strong { color:#111827; }
-    table { width:100%; border-collapse:collapse; margin:14px 0 22px; overflow:hidden; border:1px solid var(--line); border-radius:14px; background:#fff; }
-    th, td { border-bottom:1px solid var(--line); border-right:1px solid var(--line); padding:12px 14px; text-align:left; vertical-align:top; font-size:15px; color:#334155; }
+    .table-wrap { width:100%; overflow-x:auto; margin:16px 0 24px; border:1px solid var(--line); border-radius:16px; background:#fff; }
+    table { width:100%; min-width:620px; border-collapse:collapse; }
+    th, td { border-bottom:1px solid var(--line); border-right:1px solid var(--line); padding:13px 15px; text-align:left; vertical-align:top; font-size:15px; color:#334155; }
     th:last-child, td:last-child { border-right:0; }
     tr:last-child td { border-bottom:0; }
     th { background:var(--soft); color:var(--navy); font-weight:760; }
-    pre { white-space:pre-wrap; padding:16px; border:1px solid var(--line); border-radius:14px; background:#f8fafc; color:#26384d; font-size:14px; line-height:1.7; overflow:auto; }
+    pre { white-space:pre-wrap; padding:17px 18px; border:1px solid var(--line); border-radius:16px; background:#f8fafc; color:#26384d; font-size:14px; line-height:1.7; overflow:auto; }
     code { font-family:"SF Mono","JetBrains Mono",monospace; font-size:.92em; color:#1e3a5f; }
-    @media print { .back { display:none; } body { background:#fff; } body::before { display:none; } article { box-shadow:none; } }
+    .meta-label { margin:0 0 8px; color:var(--muted); font-size:12px; letter-spacing:.12em; text-transform:uppercase; font-weight:760; }
+    .meta-title { margin:0; color:var(--navy); font-size:18px; line-height:1.35; font-weight:800; }
+    .chip-list { display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
+    .chip { padding:7px 10px; border:1px solid rgba(49,90,133,.14); border-radius:999px; background:rgba(238,245,251,.86); color:var(--navy); font-size:12px; line-height:1; white-space:nowrap; }
+    .toc { display:grid; gap:4px; margin-top:12px; }
+    .toc a { display:block; padding:8px 10px; border-radius:10px; color:#41536a; font-size:13px; line-height:1.35; transition:180ms var(--ease-out); }
+    .toc a:hover { color:var(--navy); background:var(--soft); transform:translateX(2px); }
+    .reveal { opacity:1; transform:none; animation:softIn 620ms var(--ease-out) both; }
+    @keyframes softIn { from { opacity:.72; transform:translateY(8px); } to { opacity:1; transform:none; } }
+    @media (max-width: 860px) {
+      .side-stack { order:0; grid-template-columns:1fr; }
+      .toc { grid-template-columns:1fr; }
+      .topbar { align-items:flex-start; flex-direction:column; border-radius:22px; }
+    }
+    @media (max-width: 640px) {
+      .page-shell { width:min(calc(100% - 20px), 1180px); margin-top:10px; }
+      article { padding:24px 18px; border-radius:18px; }
+      h1 { font-size:34px; }
+      h2 { font-size:22px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior:auto; }
+      .reveal { animation:none; }
+      .back, .toc a { transition:none; }
+    }
+    @media print {
+      body { background:#fff; }
+      body::before, .topbar, .side-stack { display:none; }
+      .page-shell { width:100%; margin:0; }
+      .page-grid { display:block; }
+      article { box-shadow:none; border-color:#ddd; }
+      .reveal { animation:none; }
+    }
   </style>
 </head>
 <body>
-  <main class="shell">
-    <a class="back" href="../index.html">返回作品集首页</a>
-    <article>
-      <h1>三级责任班级管理案例</h1>
-<h2>一、案例背景</h2>
-<p>任教场景：县级公办中学</p>
-<p>班级规模：约40人</p>
-<p>学生特点：基础差异明显，自我管理能力参差不齐，部分学生学习主动性不足。</p>
-<p>在县级学校教学中，教师不仅要完成学科教学，还需要处理课堂纪律、作业收交、学生情绪、家校沟通和班级活动组织等事务。如果所有问题都由教师单向管理，效率较低，学生也难以形成责任意识。</p>
-<h2>二、管理目标</h2>
-<ol>
+  <main class="page-shell" id="top">
+    <header class="topbar">
+      <a class="brand-mini" href="../index.html#top" aria-label="返回作品集首页">
+        <span class="brand-dot">曹</span>
+        <span>曹月华｜英语教师教学作品集</span>
+      </a>
+      <a class="back" href="../index.html#artifacts">返回作品集首页</a>
+    </header>
+    <div class="page-grid">
+      <article>
+        <span class="eyebrow">Class Management · 班级管理案例</span>
+        <h1>三级责任班级管理案例</h1>
+<h2 id="一-案例背景" class="reveal">一、案例背景</h2>
+<p class="reveal">任教场景：县级公办中学</p>
+<p class="reveal">班级规模：约40人</p>
+<p class="reveal">学生特点：基础差异明显，自我管理能力参差不齐，部分学生学习主动性不足。</p>
+<p class="reveal">在县级学校教学中，教师不仅要完成学科教学，还需要处理课堂纪律、作业收交、学生情绪、家校沟通和班级活动组织等事务。如果所有问题都由教师单向管理，效率较低，学生也难以形成责任意识。</p>
+<h2 id="二-管理目标" class="reveal">二、管理目标</h2>
+<ol class="reveal">
 <li>建立清晰的班级责任边界；</li>
 <li>提升学生自主管理意识；</li>
 <li>改善作业完成质量和课堂秩序；</li>
 <li>培养学生规则意识、集体荣誉感和互助意识。</li>
 </ol>
-<h2>三、三级责任机制</h2>
-<h3>第一级：班干部</h3>
-<p>职责：</p>
-<ul>
+<h2 id="三-三级责任机制" class="reveal">三、三级责任机制</h2>
+<h3 id="第一级-班干部" class="reveal">第一级：班干部</h3>
+<p class="reveal">职责：</p>
+<ul class="reveal">
 <li>协助教师进行班级事务协调；</li>
 <li>记录班级活动安排；</li>
 <li>维护班级整体秩序；</li>
 <li>反馈班级共性问题。</li>
 </ul>
-<h3>第二级：小组长</h3>
-<p>职责：</p>
-<ul>
+<h3 id="第二级-小组长" class="reveal">第二级：小组长</h3>
+<p class="reveal">职责：</p>
+<ul class="reveal">
 <li>负责小组作业收交；</li>
 <li>提醒组员课堂参与；</li>
 <li>组织小组互助讲题；</li>
 <li>记录组内学习困难。</li>
 </ul>
-<h3>第三级：学生个人</h3>
-<p>职责：</p>
-<ul>
+<h3 id="第三级-学生个人" class="reveal">第三级：学生个人</h3>
+<p class="reveal">职责：</p>
+<ul class="reveal">
 <li>明确个人阶段目标；</li>
 <li>按时完成作业和订正；</li>
 <li>参与班级常规事务；</li>
 <li>对自己的学习状态负责。</li>
 </ul>
-<h2>四、具体做法</h2>
-<ol>
+<h2 id="四-具体做法" class="reveal">四、具体做法</h2>
+<ol class="reveal">
 <li>将班级划分为若干学习小组，每组设置小组长。</li>
 <li>每周固定时间检查作业完成与错题订正情况。</li>
 <li>对基础薄弱学生安排小组内互助，先解决基础题和高频错题。</li>
 <li>班会中复盘班级常规、学习状态和活动参与情况。</li>
 <li>通过运动会、秋游、主题班会等活动增强班级凝聚力。</li>
 </ol>
-<h2>五、育人重点</h2>
-<table><thead><tr>
+<h2 id="五-育人重点" class="reveal">五、育人重点</h2>
+<div class="table-wrap"><table><thead><tr>
 <th>育人维度</th>
 <th>具体体现</th>
 </tr></thead><tbody>
@@ -104,12 +218,40 @@
 <td>集体荣誉感</td>
 <td>通过活动建设班级文化</td>
 </tr>
-</tbody></table>
-<h2>六、效果描述</h2>
-<p>通过持续执行，班级事务由教师单向管理逐步转向学生共同参与。学生在作业收交、课堂提醒、错题订正和活动组织中的主动性提升，班级课堂秩序和学习氛围逐步改善。部分基础薄弱学生在小组互助中获得更多支持，从“不愿订正、被动完成”转向“能完成基础题、愿意参与小组讨论”。</p>
-<h2>七、教师反思</h2>
-<p>班级管理不是简单地“管住学生”，而是帮助学生理解规则、承担责任并获得成长机会。县级学校学生基础差异大，教师更需要把学科教学、学习习惯和德育引导结合起来。三级责任机制让我形成了较强的班级组织意识，也为后续家校沟通、课堂管理和分层教学打下基础。</p>
-    </article>
+</tbody></table></div>
+<h2 id="六-效果描述" class="reveal">六、效果描述</h2>
+<p class="reveal">通过持续执行，班级事务由教师单向管理逐步转向学生共同参与。学生在作业收交、课堂提醒、错题订正和活动组织中的主动性提升，班级课堂秩序和学习氛围逐步改善。部分基础薄弱学生在小组互助中获得更多支持，从“不愿订正、被动完成”转向“能完成基础题、愿意参与小组讨论”。</p>
+<h2 id="七-教师反思" class="reveal">七、教师反思</h2>
+<p class="reveal">班级管理不是简单地“管住学生”，而是帮助学生理解规则、承担责任并获得成长机会。县级学校学生基础差异大，教师更需要把学科教学、学习习惯和德育引导结合起来。三级责任机制让我形成了较强的班级组织意识，也为后续家校沟通、课堂管理和分层教学打下基础。</p>
+      </article>
+      <aside class="side-stack" aria-label="材料信息">
+        <section class="side-card reveal visible">
+          <p class="meta-label">Material</p>
+          <p class="meta-title">三级责任班级管理案例</p>
+          <div class="chip-list"><span class="chip">纪律建设</span><span class="chip">责任机制</span><span class="chip">协同育人</span></div>
+        </section>
+        <section class="side-card reveal visible">
+          <p class="meta-label">Contents</p>
+          <nav class="toc" aria-label="章节导航">
+            <a href="#一-案例背景">一、案例背景</a>
+<a href="#二-管理目标">二、管理目标</a>
+<a href="#三-三级责任机制">三、三级责任机制</a>
+<a href="#四-具体做法">四、具体做法</a>
+<a href="#五-育人重点">五、育人重点</a>
+<a href="#六-效果描述">六、效果描述</a>
+<a href="#七-教师反思">七、教师反思</a>
+          </nav>
+        </section>
+      </aside>
+    </div>
   </main>
+  <script>
+    document.querySelectorAll('.toc a').forEach((link) => {
+      link.addEventListener('click', () => {
+        document.querySelectorAll('.toc a').forEach((item) => item.removeAttribute('aria-current'));
+        link.setAttribute('aria-current', 'true');
+      });
+    });
+  </script>
 </body>
 </html>
