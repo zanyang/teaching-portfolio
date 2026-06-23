@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>三级责任班级管理案例｜曹月华教学作品集</title>
   <style>
-    :root { --ink:#172033; --muted:#64748b; --navy:#1e3a5f; --line:rgba(23,32,51,.12); --bg:#f5f7fa; }
+    :root { --ink:#172033; --muted:#64748b; --navy:#1e3a5f; --line:rgba(23,32,51,.12); --bg:#f5f7fa; --soft:#eef5fb; }
     * { box-sizing: border-box; }
-    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif; color:var(--ink); background:linear-gradient(180deg,#fbfcfe 0%,var(--bg) 100%); line-height:1.78; }
-    .shell { width:min(calc(100% - 32px), 920px); margin:32px auto 64px; }
-    .back { display:inline-flex; margin-bottom:18px; color:var(--navy); font-size:14px; text-decoration:none; border:1px solid var(--line); border-radius:999px; padding:8px 12px; background:#fff; }
-    article { background:rgba(255,255,255,.92); border:1px solid var(--line); border-radius:22px; padding:clamp(24px,5vw,48px); box-shadow:0 24px 80px rgba(30,58,95,.08); }
+    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif; color:var(--ink); background:linear-gradient(180deg,#fbfcfe 0%,var(--bg) 100%); line-height:1.78; text-rendering:optimizeLegibility; -webkit-font-smoothing:antialiased; }
+    body::before { content:""; position:fixed; right:clamp(-72px,4vw,72px); top:96px; width:clamp(220px,24vw,340px); height:clamp(220px,24vw,340px); background:url("../assets/bnu-logo1.png") center / contain no-repeat; opacity:.055; pointer-events:none; z-index:0; }
+    .shell { position:relative; z-index:1; width:min(calc(100% - 32px), 920px); margin:32px auto 64px; }
+    .back { display:inline-flex; margin-bottom:18px; color:var(--navy); font-size:14px; text-decoration:none; border:1px solid var(--line); border-radius:999px; padding:8px 12px; background:#fff; box-shadow:0 8px 26px rgba(30,58,95,.06); }
+    article { background:rgba(255,255,255,.94); border:1px solid var(--line); border-radius:22px; padding:clamp(24px,5vw,48px); box-shadow:0 24px 80px rgba(30,58,95,.08); }
     h1 { margin:0 0 24px; color:var(--navy); font-size:clamp(28px,5vw,44px); line-height:1.18; letter-spacing:-.04em; text-wrap:balance; }
     h2 { margin:34px 0 12px; color:var(--navy); font-size:24px; border-top:1px solid var(--line); padding-top:22px; }
     h3 { margin:26px 0 10px; color:var(--navy); font-size:19px; }
@@ -18,7 +19,14 @@
     ul, ol { padding-left:1.25em; }
     li + li { margin-top:8px; }
     strong { color:#111827; }
-    @media print { .back { display:none; } body { background:#fff; } article { box-shadow:none; } }
+    table { width:100%; border-collapse:collapse; margin:14px 0 22px; overflow:hidden; border:1px solid var(--line); border-radius:14px; background:#fff; }
+    th, td { border-bottom:1px solid var(--line); border-right:1px solid var(--line); padding:12px 14px; text-align:left; vertical-align:top; font-size:15px; color:#334155; }
+    th:last-child, td:last-child { border-right:0; }
+    tr:last-child td { border-bottom:0; }
+    th { background:var(--soft); color:var(--navy); font-weight:760; }
+    pre { white-space:pre-wrap; padding:16px; border:1px solid var(--line); border-radius:14px; background:#f8fafc; color:#26384d; font-size:14px; line-height:1.7; overflow:auto; }
+    code { font-family:"SF Mono","JetBrains Mono",monospace; font-size:.92em; color:#1e3a5f; }
+    @media print { .back { display:none; } body { background:#fff; } body::before { display:none; } article { box-shadow:none; } }
   </style>
 </head>
 <body>
@@ -72,13 +80,31 @@
 <li>通过运动会、秋游、主题班会等活动增强班级凝聚力。</li>
 </ol>
 <h2>五、育人重点</h2>
-<p>| 育人维度   | 具体体现                 |</p>
-<p>| ---------- | ------------------------ |</p>
-<p>| 责任意识   | 每个学生都有明确任务     |</p>
-<p>| 规则意识   | 班级事务按流程执行       |</p>
-<p>| 合作意识   | 小组互助讲题和活动协作   |</p>
-<p>| 学习习惯   | 作业、订正、复盘形成闭环 |</p>
-<p>| 集体荣誉感 | 通过活动建设班级文化     |</p>
+<table><thead><tr>
+<th>育人维度</th>
+<th>具体体现</th>
+</tr></thead><tbody>
+<tr>
+<td>责任意识</td>
+<td>每个学生都有明确任务</td>
+</tr>
+<tr>
+<td>规则意识</td>
+<td>班级事务按流程执行</td>
+</tr>
+<tr>
+<td>合作意识</td>
+<td>小组互助讲题和活动协作</td>
+</tr>
+<tr>
+<td>学习习惯</td>
+<td>作业、订正、复盘形成闭环</td>
+</tr>
+<tr>
+<td>集体荣誉感</td>
+<td>通过活动建设班级文化</td>
+</tr>
+</tbody></table>
 <h2>六、效果描述</h2>
 <p>通过持续执行，班级事务由教师单向管理逐步转向学生共同参与。学生在作业收交、课堂提醒、错题订正和活动组织中的主动性提升，班级课堂秩序和学习氛围逐步改善。部分基础薄弱学生在小组互助中获得更多支持，从“不愿订正、被动完成”转向“能完成基础题、愿意参与小组讨论”。</p>
 <h2>七、教师反思</h2>
