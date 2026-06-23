@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>基于思维品质培养的小学英语课堂提问设计样例｜曹月华教学作品集</title>
   <style>
-    :root { --ink:#172033; --muted:#64748b; --navy:#1e3a5f; --line:rgba(23,32,51,.12); --bg:#f5f7fa; }
+    :root { --ink:#172033; --muted:#64748b; --navy:#1e3a5f; --line:rgba(23,32,51,.12); --bg:#f5f7fa; --soft:#eef5fb; }
     * { box-sizing: border-box; }
-    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif; color:var(--ink); background:linear-gradient(180deg,#fbfcfe 0%,var(--bg) 100%); line-height:1.78; }
-    .shell { width:min(calc(100% - 32px), 920px); margin:32px auto 64px; }
-    .back { display:inline-flex; margin-bottom:18px; color:var(--navy); font-size:14px; text-decoration:none; border:1px solid var(--line); border-radius:999px; padding:8px 12px; background:#fff; }
-    article { background:rgba(255,255,255,.92); border:1px solid var(--line); border-radius:22px; padding:clamp(24px,5vw,48px); box-shadow:0 24px 80px rgba(30,58,95,.08); }
+    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif; color:var(--ink); background:linear-gradient(180deg,#fbfcfe 0%,var(--bg) 100%); line-height:1.78; text-rendering:optimizeLegibility; -webkit-font-smoothing:antialiased; }
+    body::before { content:""; position:fixed; right:clamp(-72px,4vw,72px); top:96px; width:clamp(220px,24vw,340px); height:clamp(220px,24vw,340px); background:url("../assets/bnu-logo1.png") center / contain no-repeat; opacity:.055; pointer-events:none; z-index:0; }
+    .shell { position:relative; z-index:1; width:min(calc(100% - 32px), 920px); margin:32px auto 64px; }
+    .back { display:inline-flex; margin-bottom:18px; color:var(--navy); font-size:14px; text-decoration:none; border:1px solid var(--line); border-radius:999px; padding:8px 12px; background:#fff; box-shadow:0 8px 26px rgba(30,58,95,.06); }
+    article { background:rgba(255,255,255,.94); border:1px solid var(--line); border-radius:22px; padding:clamp(24px,5vw,48px); box-shadow:0 24px 80px rgba(30,58,95,.08); }
     h1 { margin:0 0 24px; color:var(--navy); font-size:clamp(28px,5vw,44px); line-height:1.18; letter-spacing:-.04em; text-wrap:balance; }
     h2 { margin:34px 0 12px; color:var(--navy); font-size:24px; border-top:1px solid var(--line); padding-top:22px; }
     h3 { margin:26px 0 10px; color:var(--navy); font-size:19px; }
@@ -18,7 +19,14 @@
     ul, ol { padding-left:1.25em; }
     li + li { margin-top:8px; }
     strong { color:#111827; }
-    @media print { .back { display:none; } body { background:#fff; } article { box-shadow:none; } }
+    table { width:100%; border-collapse:collapse; margin:14px 0 22px; overflow:hidden; border:1px solid var(--line); border-radius:14px; background:#fff; }
+    th, td { border-bottom:1px solid var(--line); border-right:1px solid var(--line); padding:12px 14px; text-align:left; vertical-align:top; font-size:15px; color:#334155; }
+    th:last-child, td:last-child { border-right:0; }
+    tr:last-child td { border-bottom:0; }
+    th { background:var(--soft); color:var(--navy); font-weight:760; }
+    pre { white-space:pre-wrap; padding:16px; border:1px solid var(--line); border-radius:14px; background:#f8fafc; color:#26384d; font-size:14px; line-height:1.7; overflow:auto; }
+    code { font-family:"SF Mono","JetBrains Mono",monospace; font-size:.92em; color:#1e3a5f; }
+    @media print { .back { display:none; } body { background:#fff; } body::before { display:none; } article { box-shadow:none; } }
   </style>
 </head>
 <body>
@@ -28,7 +36,7 @@
       <h1>基于思维品质培养的小学英语课堂提问设计样例</h1>
 <h2>一、研究关联</h2>
 <p>硕士论文题目：<strong>《基于思维品质培养的小学英语课堂提问的案例研究》</strong></p>
-<p>本样例用于展示如何在小学英语课堂中通过问题链设计推动学生从词汇识别走向观察、比较、推测和表达。</p>
+<p>本材料围绕小学英语课堂问题链设计展开，体现如何推动学生从词汇识别走向观察、比较、推测和表达。</p>
 <h2>二、设计原则</h2>
 <ol>
 <li>问题由浅入深，符合三年级学生语言水平；</li>
@@ -37,43 +45,102 @@
 <li>问题尽量贴近图片、动作、生活经验和课堂任务。</li>
 </ol>
 <h2>三、U2 Different Families 问题链</h2>
-<p>| 层级 | 教师提问                              | 学生可能回答             | 思维目标 |</p>
-<p>| ---- | ------------------------------------- | ------------------------ | -------- |</p>
-<p>| 识记 | Who is this?                          | father / mother / sister | 词汇识别 |</p>
-<p>| 理解 | Is it a big family or a small family? | big / small              | 信息理解 |</p>
-<p>| 描述 | What is he/she like?                  | nice / tall / happy      | 人物描述 |</p>
-<p>| 比较 | Are the two families the same?        | No. They are different.  | 比较分类 |</p>
-<p>| 表达 | Who do you want to introduce?         | This is my mother.       | 个性表达 |</p>
+<table><thead><tr>
+<th>层级</th>
+<th>教师提问</th>
+<th>学生可能回答</th>
+<th>思维目标</th>
+</tr></thead><tbody>
+<tr>
+<td>识记</td>
+<td>Who is this?</td>
+<td>father / mother / sister</td>
+<td>词汇识别</td>
+</tr>
+<tr>
+<td>理解</td>
+<td>Is it a big family or a small family?</td>
+<td>big / small</td>
+<td>信息理解</td>
+</tr>
+<tr>
+<td>描述</td>
+<td>What is he/she like?</td>
+<td>nice / tall / happy</td>
+<td>人物描述</td>
+</tr>
+<tr>
+<td>比较</td>
+<td>Are the two families the same?</td>
+<td>No. They are different.</td>
+<td>比较分类</td>
+</tr>
+<tr>
+<td>表达</td>
+<td>Who do you want to introduce?</td>
+<td>This is my mother.</td>
+<td>个性表达</td>
+</tr>
+</tbody></table>
 <h2>四、U3 Our Animal Friends 问题链</h2>
-<p>| 层级 | 教师提问                    | 学生可能回答        | 思维目标     |</p>
-<p>| ---- | --------------------------- | ------------------- | ------------ |</p>
-<p>| 识记 | What is it?                 | It is a cat.        | 词汇识别     |</p>
-<p>| 描述 | What color is it?           | It is white.        | 观察描述     |</p>
-<p>| 能力 | What can it do?             | It can run.         | 信息表达     |</p>
-<p>| 比较 | Are cats and dogs the same? | No. Cats are small. | 比较判断     |</p>
-<p>| 推测 | What animal is it? Listen.  | It is a dog.        | 根据线索推测 |</p>
-<p>| 表达 | Why do you like it?         | It is cute.         | 个性表达     |</p>
+<table><thead><tr>
+<th>层级</th>
+<th>教师提问</th>
+<th>学生可能回答</th>
+<th>思维目标</th>
+</tr></thead><tbody>
+<tr>
+<td>识记</td>
+<td>What is it?</td>
+<td>It is a cat.</td>
+<td>词汇识别</td>
+</tr>
+<tr>
+<td>描述</td>
+<td>What color is it?</td>
+<td>It is white.</td>
+<td>观察描述</td>
+</tr>
+<tr>
+<td>能力</td>
+<td>What can it do?</td>
+<td>It can run.</td>
+<td>信息表达</td>
+</tr>
+<tr>
+<td>比较</td>
+<td>Are cats and dogs the same?</td>
+<td>No. Cats are small.</td>
+<td>比较判断</td>
+</tr>
+<tr>
+<td>推测</td>
+<td>What animal is it? Listen.</td>
+<td>It is a dog.</td>
+<td>根据线索推测</td>
+</tr>
+<tr>
+<td>表达</td>
+<td>Why do you like it?</td>
+<td>It is cute.</td>
+<td>个性表达</td>
+</tr>
+</tbody></table>
 <h2>五、分层提问策略</h2>
 <h3>基础层学生</h3>
 <p>给出图片、词卡和句型支架，问题以识别和模仿为主：</p>
-<p>```text</p>
-<p>What is it?</p>
-<p>Who is this?</p>
-<p>Is it big or small?</p>
-<p>```</p>
+<pre><code>What is it?
+Who is this?
+Is it big or small?</code></pre>
 <h3>中等层学生</h3>
 <p>问题引导学生完成较完整的句子表达：</p>
-<p>```text</p>
-<p>Can you introduce your family?</p>
-<p>Can you describe the animal?</p>
-<p>```</p>
+<pre><code>Can you introduce your family?
+Can you describe the animal?</code></pre>
 <h3>拓展层学生</h3>
 <p>问题引导学生比较、推测和表达原因：</p>
-<p>```text</p>
-<p>What is different?</p>
-<p>Why do you like it?</p>
-<p>What do you think?</p>
-<p>```</p>
+<pre><code>What is different?
+Why do you like it?
+What do you think?</code></pre>
 <h2>六、课堂观察要点</h2>
 <p>教师在课堂中可观察：</p>
 <ul>

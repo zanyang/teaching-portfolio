@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>U3_Our_Animal_Friends_教学设计｜曹月华教学作品集</title>
   <style>
-    :root { --ink:#172033; --muted:#64748b; --navy:#1e3a5f; --line:rgba(23,32,51,.12); --bg:#f5f7fa; }
+    :root { --ink:#172033; --muted:#64748b; --navy:#1e3a5f; --line:rgba(23,32,51,.12); --bg:#f5f7fa; --soft:#eef5fb; }
     * { box-sizing: border-box; }
-    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif; color:var(--ink); background:linear-gradient(180deg,#fbfcfe 0%,var(--bg) 100%); line-height:1.78; }
-    .shell { width:min(calc(100% - 32px), 920px); margin:32px auto 64px; }
-    .back { display:inline-flex; margin-bottom:18px; color:var(--navy); font-size:14px; text-decoration:none; border:1px solid var(--line); border-radius:999px; padding:8px 12px; background:#fff; }
-    article { background:rgba(255,255,255,.92); border:1px solid var(--line); border-radius:22px; padding:clamp(24px,5vw,48px); box-shadow:0 24px 80px rgba(30,58,95,.08); }
+    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif; color:var(--ink); background:linear-gradient(180deg,#fbfcfe 0%,var(--bg) 100%); line-height:1.78; text-rendering:optimizeLegibility; -webkit-font-smoothing:antialiased; }
+    body::before { content:""; position:fixed; right:clamp(-72px,4vw,72px); top:96px; width:clamp(220px,24vw,340px); height:clamp(220px,24vw,340px); background:url("../assets/bnu-logo1.png") center / contain no-repeat; opacity:.055; pointer-events:none; z-index:0; }
+    .shell { position:relative; z-index:1; width:min(calc(100% - 32px), 920px); margin:32px auto 64px; }
+    .back { display:inline-flex; margin-bottom:18px; color:var(--navy); font-size:14px; text-decoration:none; border:1px solid var(--line); border-radius:999px; padding:8px 12px; background:#fff; box-shadow:0 8px 26px rgba(30,58,95,.06); }
+    article { background:rgba(255,255,255,.94); border:1px solid var(--line); border-radius:22px; padding:clamp(24px,5vw,48px); box-shadow:0 24px 80px rgba(30,58,95,.08); }
     h1 { margin:0 0 24px; color:var(--navy); font-size:clamp(28px,5vw,44px); line-height:1.18; letter-spacing:-.04em; text-wrap:balance; }
     h2 { margin:34px 0 12px; color:var(--navy); font-size:24px; border-top:1px solid var(--line); padding-top:22px; }
     h3 { margin:26px 0 10px; color:var(--navy); font-size:19px; }
@@ -18,7 +19,14 @@
     ul, ol { padding-left:1.25em; }
     li + li { margin-top:8px; }
     strong { color:#111827; }
-    @media print { .back { display:none; } body { background:#fff; } article { box-shadow:none; } }
+    table { width:100%; border-collapse:collapse; margin:14px 0 22px; overflow:hidden; border:1px solid var(--line); border-radius:14px; background:#fff; }
+    th, td { border-bottom:1px solid var(--line); border-right:1px solid var(--line); padding:12px 14px; text-align:left; vertical-align:top; font-size:15px; color:#334155; }
+    th:last-child, td:last-child { border-right:0; }
+    tr:last-child td { border-bottom:0; }
+    th { background:var(--soft); color:var(--navy); font-weight:760; }
+    pre { white-space:pre-wrap; padding:16px; border:1px solid var(--line); border-radius:14px; background:#f8fafc; color:#26384d; font-size:14px; line-height:1.7; overflow:auto; }
+    code { font-family:"SF Mono","JetBrains Mono",monospace; font-size:.92em; color:#1e3a5f; }
+    @media print { .back { display:none; } body { background:#fff; } body::before { display:none; } article { box-shadow:none; } }
   </style>
 </head>
 <body>
@@ -27,14 +35,35 @@
     <article>
       <h1>U3 Our Animal Friends 教学设计</h1>
 <h2>一、基本信息</h2>
-<p>| 项目     | 内容                  |</p>
-<p>| -------- | --------------------- |</p>
-<p>| 学段     | 小学三年级上册        |</p>
-<p>| 单元     | U3 Our Animal Friends |</p>
-<p>| 课型     | 对话课 / 描述表达课   |</p>
-<p>| 课时     | 1课时，约40分钟       |</p>
-<p>| 主题语境 | 动物朋友与特征描述    |</p>
-<p>| 设计者   | 曹月华                |</p>
+<table><thead><tr>
+<th>项目</th>
+<th>内容</th>
+</tr></thead><tbody>
+<tr>
+<td>学段</td>
+<td>小学三年级上册</td>
+</tr>
+<tr>
+<td>单元</td>
+<td>U3 Our Animal Friends</td>
+</tr>
+<tr>
+<td>课型</td>
+<td>对话课 / 描述表达课</td>
+</tr>
+<tr>
+<td>课时</td>
+<td>1课时，约40分钟</td>
+</tr>
+<tr>
+<td>主题语境</td>
+<td>动物朋友与特征描述</td>
+</tr>
+<tr>
+<td>设计者</td>
+<td>曹月华</td>
+</tr>
+</tbody></table>
 <h2>二、教材与学情分析</h2>
 <p>本单元以“动物朋友”为主题，契合三年级学生兴趣特点。动物图片、声音竞猜、动作模仿和小组展示都能有效调动学生参与。三年级学生已具备初步听说模仿能力，但完整描述能力仍需句型支架。</p>
 <p>本课设计重点是引导学生从识别动物词汇走向描述动物特征，并通过问题链培养观察、比较和简单推测能力。</p>
@@ -92,12 +121,10 @@
 <h3>Step 2 Presentation</h3>
 <p>教师通过图片呈现动物词汇和描述性语言。</p>
 <p>目标句型示例：</p>
-<p>```text</p>
-<p>It is a ______.</p>
-<p>It is ______.</p>
-<p>It can ______.</p>
-<p>I like it.</p>
-<p>```</p>
+<pre><code>It is a ______.
+It is ______.
+It can ______.
+I like it.</code></pre>
 <p>设计意图：帮助学生建立“动物名称—外形特征—能力表达”的语言链条。</p>
 <h3>Step 3 Practice</h3>
 <p>活动一：Listen and Point</p>
@@ -106,21 +133,17 @@
 <p>一名学生模仿动物动作，其他学生猜测。</p>
 <p>活动三：Ask and Answer</p>
 <p>两人一组完成问答。</p>
-<p>```text</p>
-<p>A: What is it?</p>
-<p>B: It is a ______.</p>
-<p>A: What color is it?</p>
-<p>B: It is ______.</p>
-<p>```</p>
+<pre><code>A: What is it?
+B: It is a ______.
+A: What color is it?
+B: It is ______.</code></pre>
 <h3>Step 4 Production</h3>
-<p>小组完成 `Our Animal Friend` 展示任务。</p>
+<p>小组完成 <code>Our Animal Friend</code> 展示任务。</p>
 <p>输出示例：</p>
-<p>```text</p>
-<p>It is a cat.</p>
-<p>It is white.</p>
-<p>It can run.</p>
-<p>I like it.</p>
-<p>```</p>
+<pre><code>It is a cat.
+It is white.
+It can run.
+I like it.</code></pre>
 <p>分层要求：</p>
 <ul>
 <li>基础层：能说动物名称；</li>
@@ -129,9 +152,7 @@
 </ul>
 <h3>Step 5 Summary and Evaluation</h3>
 <p>教师引导学生总结：</p>
-<p>```text</p>
-<p>Animals are our friends. We should love animals.</p>
-<p>```</p>
+<pre><code>Animals are our friends. We should love animals.</code></pre>
 <p>评价维度：</p>
 <ul>
 <li>词汇准确；</li>
@@ -140,18 +161,18 @@
 <li>愿意展示。</li>
 </ul>
 <h2>七、板书设计</h2>
-<p>```text</p>
-<p>U3 Our Animal Friends</p>
-<p>It is a ______.</p>
-<p>It is ______.</p>
-<p>It can ______.</p>
-<p>I like it.</p>
-<p>cat / dog / bird / rabbit / fish / ...</p>
-<p>big / small / cute / white / black / ...</p>
-<p>```</p>
+<pre><code>U3 Our Animal Friends
+
+It is a ______.
+It is ______.
+It can ______.
+I like it.
+
+cat / dog / bird / rabbit / fish / ...
+big / small / cute / white / black / ...</code></pre>
 <h2>八、作业设计</h2>
 <ol>
-<li>完成 `Our Animal Friend` 活动单；</li>
+<li>完成 <code>Our Animal Friend</code> 活动单；</li>
 <li>向家人介绍一种动物；</li>
 <li>选做：画一只动物并写 3 句英文介绍。</li>
 </ol>
